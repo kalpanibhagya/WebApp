@@ -9,4 +9,4 @@ Run angular application using ```ng serve``` command
 
 To work properly you need both applications up and running
 
-![Angular App](Screen.png)
+![Angular App](Screen.PNG)
