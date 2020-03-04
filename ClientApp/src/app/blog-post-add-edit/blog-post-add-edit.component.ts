@@ -58,7 +58,7 @@ export class BlogPostAddEditComponent implements OnInit {
     if (this.actionType === 'Add') {
       const blogPost: BlogPost = {
         dt: new Date(),
-        creator: 'Martin',
+        creator: 'Kalpani',
         title: this.form.get(this.formTitle).value,
         body: this.form.get(this.formBody).value
       };

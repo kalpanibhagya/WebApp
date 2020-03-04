@@ -23,7 +23,7 @@ export class BlogPostsComponent implements OnInit {
   }
 
   delete(postId) {
-    const ans = confirm('Do you want to delete blog post with id: ' + postId);
+    const ans = confirm('Do you want to delete this blog post ?');
     if (ans) {
       this.blogPostService.deleteBlogPost(postId).subscribe((data) => {
         this.loadBlogPosts();

@@ -1,11 +1,20 @@
-<ng-container *ngIf="(blogPost$ | async) as blogPost; else loading">
+<div class="postdiv">
+  <ng-container *ngIf="(blogPost$ | async) as blogPost; else loading">
 
     <h1>{{ blogPost.title }}</h1>
     <div>{{ blogPost.body }}</div>
-    <ul>
-      <li>{{ blogPost.creator }}</li>
-      <li>{{ blogPost.dt }}</li>
-    </ul>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="float-left"><b>Created By:</b> {{ blogPost.creator }}</p>
+        </div>
+        <div class="col-md-6">
+          <p class="float-right"><b>Date:</b> {{ blogPost.dt | date : "fullDate" }}</p>
+        </div>
+      </div>
   
   </ng-container>
   <ng-template #loading>Loading…</ng-template>
+</div>
+
+<a class="float-right" [routerLink]="['/']"> << Back to Homepage</a>
