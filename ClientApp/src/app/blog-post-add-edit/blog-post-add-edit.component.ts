@@ -18,6 +18,7 @@ export class BlogPostAddEditComponent implements OnInit {
   errorMessage: any;
   existingBlogPost: BlogPost;
 
+  // tslint:disable-next-line: max-line-length
   constructor(private blogPostService: BlogPostService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router) {
     const idParam = 'id';
     this.actionType = 'Add';
@@ -55,7 +56,7 @@ export class BlogPostAddEditComponent implements OnInit {
     }
 
     if (this.actionType === 'Add') {
-      let blogPost: BlogPost = {
+      const blogPost: BlogPost = {
         dt: new Date(),
         creator: 'Martin',
         title: this.form.get(this.formTitle).value,
@@ -69,7 +70,7 @@ export class BlogPostAddEditComponent implements OnInit {
     }
 
     if (this.actionType === 'Edit') {
-      let blogPost: BlogPost = {
+      const blogPost: BlogPost = {
         postId: this.existingBlogPost.postId,
         dt: this.existingBlogPost.dt,
         creator: this.existingBlogPost.creator,
@@ -78,7 +79,7 @@ export class BlogPostAddEditComponent implements OnInit {
       };
       this.blogPostService.updateBlogPost(blogPost.postId, blogPost)
         .subscribe((data) => {
-          this.router.navigate([this.router.url]);
+          this.router.navigate(['/']);
         });
     }
   }
